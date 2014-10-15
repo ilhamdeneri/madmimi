@@ -90,8 +90,7 @@ class MadMimi {
 			$result = curl_exec($ch);
 			if( $result === false){
 			  $error = curl_error($ch);
-		    echo 'Curl error: ', $error, "\n";
-  			die($error);
+			  throw new Exception('Curl Error : '.$error);
 			}
 		}
 		curl_close($ch);
